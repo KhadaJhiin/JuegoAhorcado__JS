@@ -1,0 +1,75 @@
+//VARIABLES
+
+$color-texto:rgb(129, 77, 14);
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    color: $color-texto;
+}
+
+.box__sentenced{
+    display: flex;
+    width: 300px;
+    padding-top: 50px;
+    padding-left: 200px;
+
+    .img__horca{
+        width: 100%;
+    }
+
+    .img__vaquero{
+        padding-top: 80px;
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.box__palabra{
+    padding-top: 100px;
+    padding-left: 50px;
+
+    h2{
+        color:$color-texto;
+    }
+
+    .entrada__palabra{
+
+        input{
+            width: 50px;
+            border: none;
+            border-bottom: 1px solid;
+            cursor: pointer;
+            margin-right: 20px;
+            text-align: center;
+        }
+        input:hover{
+            border-bottom: 3px solid $color-texto;
+        }
+        button{
+            width: 80px;
+            background-color: $color-texto;
+            color: aliceblue;
+            cursor: pointer;
+        }
+    }
+}
+
+.box__numeroIntentos{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    padding-left: 50px;
+
+    p{
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $color-texto;
+    }
+
+    .contador{
+        padding-left: 20px;
+    }
+
+}
+
