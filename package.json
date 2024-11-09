@@ -11,5 +11,8 @@
   "description": "",
   "devDependencies": {
     "sass": "^1.80.6"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.2.0"
   }
 }
