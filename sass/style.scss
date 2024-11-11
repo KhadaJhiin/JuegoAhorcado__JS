@@ -1,79 +1,85 @@
 //VARIABLES
 
-$color-texto:rgb(129, 77, 14);
+$color-texto: rgb(129, 77, 14);
 
-h1{
-    font-size: 3rem;
-    text-align: center;
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: $color-texto;
+}
+
+.box__sentenced {
+  display: flex;
+  margin: auto;
+  width: 200px;
+
+  .img__horca {
+    width: 100%;
+  }
+
+  .img__vaquero {
+    padding-top: 80px;
+    width: 50%;
+    height: 50%;
+  }
+}
+
+.box__palabra {
+  text-align: center;
+  padding-top: 30px;
+
+  h2 {
     color: $color-texto;
+  }
+
+  .entrada__palabra {
+    margin-bottom: 50px;
+
+    .inputName {
+      width: 50px;
+      border: none;
+      color: black;
+      border-bottom: 1px solid black;
+      margin-right: 20px;
+      text-align: center;
+    }
+
+  }
 }
 
-.box__sentenced{
-    display: flex;
-    margin: auto;
-    width: 200px;
-
-    .img__horca{
-        width: 100%;
-    }
-
-    .img__vaquero{
-        padding-top: 80px;
-        width: 50%;
-        height: 50%;
-    }
+.intentoDeUsuario {
+  width: 50px;
+  border: none;
+  color: black;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  margin-right: 20px;
+  text-align: center;
 }
+.intentoDeUsuario:hover {
+    width: 60px;
+  }
 
-.box__palabra{
-    text-align: center;
-    padding-top: 30px;
-
-    h2{
-        color:$color-texto;
-    }
-
-    .entrada__palabra{
-
-        .inputName{
-            width: 50px;
-            border: none;
-            color:white;
-            border-bottom: 1px solid black;
-            cursor: pointer;
-            margin-right: 20px;
-            text-align: center;
-        }
-        .modificador{
-            color:black;
-        }
-        input:hover{
-            border-bottom: 3px solid $color-texto;
-        }
-        button{
-            width: 80px;
-            background-color: $color-texto;
-            color: aliceblue;
-            cursor: pointer;
-        }
-    }
+button {
+  width: 80px;
+  background-color: $color-texto;
+  color: aliceblue;
+  cursor: pointer;
 }
-
 .box__numeroIntentos {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    p {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: $color-texto;
-    }
+  p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $color-texto;
+  }
 
-    .contador {
-        padding-left: 20px;
-    }
-
+  .contador {
+    padding-left: 20px;
+  }
 }
-
