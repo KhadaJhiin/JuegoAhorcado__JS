@@ -1,66 +1,43 @@
-//Logic in JS for the game
+//ELEMENTOS DEL DOM
+let cajaDeIntentos = document.getElementById('caja__de--intentos');
+let formulario = document.querySelector(".entrada__palabra");
 
-//We create the list with the words to guess
+//Variables declaradas
+const listaDePalabras = ['zapato', 'perro', 'mañana','cocodrilo','por'];
+let numeroDeIntentos = 5;
 
-const wordList = ['pencil', 'cellphone', 'laptop', 'notebook', 'dog', 'shoes', 'frigde', 'desk', 'aligator', 'elephant', 'ancient', 'grandmother', 'brother', 'sister', 'stepfather', 'stepmother'];
+//EVENTOSLISTENER
+document.getElementById("probarLetra").addEventListener('click', probarLetra);
 
-//We create the function to choose the word to guess
 
-const randomNumber = Math.floor(Math.random() * wordList.length);
-const worChoose = wordList[randomNumber];
 
-//We create the variable for the number of attempts
 
-const numberOfAttempts = worChoose.length * 2;
+//Ejecucion del programa
 
-//We select our web elment to display this number of attempts
+mostrarNumeroIntentos();
+mostrarEspaciosParaLetra();
 
-let palabraescogida = document.getElementById("palabraescogida");
 
-let attepmtsBox = document.getElementById("caja__de--intentos");
-attepmtsBox.innerText += " " + numberOfAttempts;
-
-//Function to create the spaces where the letters will be
-
-function createSpace() {
-    let spacesForm = document.querySelector(".entrada__palabra");
-    spacesForm.innerHTML = "";
-    const arrayWord = worChoose.split('');
-    let counter = 0;
-    arrayWord.forEach(space => {
-        spacesForm.innerHTML += `<input class="inputName inputName--mod${counter}" type="text" value="${space}">`;
-        counter++;
-    });
-    spacesForm.innerHTML += '<button type="submit">Intento</button>';
+//Funciones
+function palabraAleatoria() {
+    const numeroAleatorio = Math.floor(Math.random() * listaDePalabras.length);
+    return listaDePalabras[numeroAleatorio];
 }
-
-//Function to find the index of the letters of the word
-
-function indexDetect(letter, list) {
-    let arrayIndext = [];
-
-    list.forEach((letter2, index) => {
-        if (letter2 == letter) {
-            arrayIndext.push(index);
-        }
-    });
-
-    return arrayIndext > 0 ? arrayIndext : null;
+function mostrarNumeroIntentos() {
+    cajaDeIntentos.innerText = ' ' + numeroDeIntentos;
 }
-
-//Function so that the words hide appear when the match exists
-
-function wordMatch() {
-    const userInput = document.querySelector();
-}
-
-createSpace();
-
-while (numberOfAttempts > 0) {
-
-    numberOfAttempts--;
-
-    if(numberOfAttempts==0){
-        break
+function probarLetra() {
+    if (numeroDeIntentos > 0) {
+        numeroDeIntentos--;
+        mostrarNumeroIntentos();
+    } else {
+        alert('perdiste das lastima mi amor!');
+        location.reload();
     }
+}
+function mostrarEspaciosParaLetra() {
+    formulario.innerHTML="";
+    palabraAleatoria().split('').forEach((element,index) => {
+        formulario.innerHTML += `<input type="text" name="" id="letraPalabra${index}">`;
+    });
 }

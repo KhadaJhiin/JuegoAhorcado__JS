@@ -6,9 +6,8 @@ h1 {
 
 .box__sentenced {
   display: flex;
-  width: 300px;
-  padding-top: 50px;
-  padding-left: 200px;
+  margin: auto;
+  width: 200px;
 }
 .box__sentenced .img__horca {
   width: 100%;
@@ -20,8 +19,8 @@ h1 {
 }
 
 .box__palabra {
-  padding-top: 100px;
-  padding-left: 50px;
+  text-align: center;
+  padding-top: 30px;
 }
 .box__palabra h2 {
   color: rgb(129, 77, 14);
@@ -50,9 +49,10 @@ h1 {
 
 .box__numeroIntentos {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  padding-left: 50px;
+  justify-content: center;
+  text-align: center;
 }
 .box__numeroIntentos p {
   font-size: 1.3rem;
