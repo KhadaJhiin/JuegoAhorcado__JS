@@ -4,7 +4,7 @@ let formulario = document.querySelector(".entrada__palabra");
 let inputDeEntrada = document.getElementById("unicoEntradaUsuario");
 
 //Variables declaradas
-const listaDePalabras = ['zapato', 'perro', 'mañana', 'cocodrilo', 'aguardiente','vinito','cocina','libros','cientifico','automovil','tridente','espabilado','ipsofacto','infraganti','somnoliento'];
+const listaDePalabras = ['zapato', 'perro', 'mañana', 'cocodrilo', 'aguardiente', 'vinito', 'cocina', 'libros', 'cientifico', 'automovil', 'tridente', 'espabilado', 'ipsofacto', 'infraganti', 'somnoliento'];
 let numeroDeIntentos = 5;
 const palabraSecreta = palabraAleatoria();
 const arrayPalabra = palabraSecreta.split('');
@@ -61,20 +61,42 @@ function probarLetra() {
                 let letraEncontrada = document.getElementById(`letraPalabra${element}`);
                 letraEncontrada.value = letra;
             })
+            verificador();
         } else {
             numeroDeIntentos--;
             mostrarNumeroIntentos()
         }
     } else {
-        alert('perdiste das lastima mi amor!');
-        location.reload();
+        mostrarPalabraCompleta();
+        // location.reload();
     }
     inputDeEntrada.value = "";
-    
+
+}
+function mostrarPalabraCompleta() {
+    arrayPalabra.forEach((element, index) => {
+        let letraEncontrada = document.getElementById(`letraPalabra${index}`);
+        letraEncontrada.value = element;
+    })
+}
+
+function verificador() {
     let palabraUsuario = tranformadorInputString();
     if (palabraUsuario == palabraSecreta) {
         alert('GANASTE MI PERRO LO SALVASTE AL ASESINO')
         location.reload();
     }
 }
+
+/*
+Mejoras para el dia de mañana
+
+1. Obligar a escribir asi sea una letra para poder dar intentar
+2. Que el cursor siempre este en marcado en la parte del input para poder escribir directamente 
+    y que se pueda enviar con enter
+3. Que aparezca una ventana emergente cuando se pierda mostrando los espacios con 
+    la palabra completa y un boton que diga reintentar
+4. Cuando se gane la misma ventana emergente con un mensaje diciendo que se ha ganado y si quiere 
+    jugar de nuevo.
+*/
 
